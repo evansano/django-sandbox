@@ -78,6 +78,8 @@ datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
 
 # Observe updated fields and use model functions
 ```
+$ # Add __str__() methods to each model
+$ # Add was_published_recently() method to Question model
 $ python manage.py shell
 >>> from polls.models import Choice, Question
 
@@ -156,5 +158,13 @@ True
 >>> c.delete()
 ```
 
+# Creating a superuser for admin operations
+```
+$ python manage.py createsuperuser
+$ python manage.py runserver
+$ # Login to http://127.0.0.1:8000/admin/ using superuser credentials you just created
+$ # Register Question model to be editable by admin interface at <site_root>/mysite/polls/admin.py
+```
+
 # Stopping point 11/15/2021
-https://docs.djangoproject.com/en/3.2/intro/tutorial02/#creating-an-admin-user
+https://docs.djangoproject.com/en/3.2/intro/tutorial03/
